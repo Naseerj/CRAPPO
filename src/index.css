@@ -19,7 +19,7 @@ code {
 .active{
   background-image: url('./images/Illustration.svg');
   /* background-color: red; */
-  width: 100%;
+  width: 45%;
   background-size: contain;
   background-repeat: no-repeat;
   /* margin-left: 600px; */

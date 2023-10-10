@@ -26,6 +26,7 @@ const bitcoinImg = {
 };
 const LandingPage = () => {
   const [hover, setHover] = useState(false);
+  const [hoverout, setHoverOut] = useState(!false)
 
   const handleHover = () => {
     if (hover === false) {
@@ -37,9 +38,42 @@ const LandingPage = () => {
     }
   };
 
+  const handleHoverOut = () => {
+    if (hover === true) {
+      console.log("a");
+      setHover(false);
+    } else {
+      setHover(true);
+      console.log("a");
+    }
+  };
+
   return (
-    <div className="bg-brandBlue w-82 bg-bitcoin xl:bg-red-700">
-      <div className="active ml-[50%] w-80 ">
+    <div className="bg-brandBlue  bg-bitcoin xl:bg-red-700 ">
+   <div className="flex justify-between w-[90%] mx-auto "> 
+   <div className=" w-[50%] p-5 mt-24" >
+        <div className="bg-[#FFFFFF1A]  flex justify-between w-[370px] items-center rounded-full p-2 ">
+          <button className="bg-white rounded-full w-[100px] p-2 font-bold">
+            75% save
+          </button>
+          <p className="text-white pr-5">For the Black Friday weekend</p>
+        </div>
+        <h1 className="text-[64px] w-[37rem]  text-white text-left leading-[76px] font-bold my-7">
+          Fastest & secure platform to invest in crypto
+        </h1>
+        <p className="text-white my-8 w-[400px]">
+          Buy and sell cryptocurrencies, trusted by 10M wallets with over $30
+          billion in transactions.
+        </p>
+        <button className="text-white bg-[#3671E9] flex rounded-full w-36 justify-between p-2 text-center">
+          Try For Free <img src={arrowRight} alt="" />
+        </button>
+      </div>
+      <div className="active mt-24">
+
+      </div>
+   </div>
+      {/* <div className=" w-80 bg-red-500 flex ">
         <div className="w-[50%] text-left p-12  pl-16 ">
           <div className="   w-10/12  pl-0 relative right-[110%] ">
             <div className="bg-[#FFFFFF1A]  flex justify-between w-[350px] items-center rounded-full p-2 ">
@@ -60,8 +94,11 @@ const LandingPage = () => {
               Try For Free <img src={arrowRight} alt="" />
             </button>
           </div>
+          <div className="active bg-gray-600">
+            <div>ARSENAL</div>
+          </div>
         </div>
-      </div>
+      </div> */}
       <div className="text-white flex justify-between w-[80%]  mx-auto items-center mt-44">
         <div className="flex justify-between w-72  items-center">
           <img src={barchart} alt="" />
@@ -163,12 +200,12 @@ const LandingPage = () => {
             <p className="font-[16px]">
               Digital currency in which a record of transactions is maintained.
             </p>
-            {hover && (
-              <button className="mt-12 flex items-center bg-[#3671E9] p-2 rounded-full w-48 mx-auto justify-between font-[18px] text-white">
-                {hover ? "Start mining" : "Nothing"}
+            
+              <button onMouseEnter={handleHover} onMouseLeave={handleHoverOut} className="mt-12 flex items-center bg-[#3671E9] p-2 rounded-full w-{hover? 62: 0 mx-auto justify-between font-[18px] text-white">
+                {hover ? "Start mining" : ""}
                 <img className="w-16" src={arrowRight} alt="" />
               </button>
-            )}
+          
           </div>
           <div className="grid-rows-4 bg-red-500 w-[30%] p-6 items-center text-center align-middle rounded-xl ">
             <img
@@ -182,7 +219,7 @@ const LandingPage = () => {
             <p className="font-[16px]">
               Digital currency in which a record of transactions is maintained.
             </p>
-            <button className="mt-12">
+            <button className="mt-12 border-4 border-rgba(43, 7, 110, 0.20) rounded-[4rem]">
               <img className="w-16" src={arrowRight} alt="" />
             </button>
           </div>
@@ -198,8 +235,9 @@ const LandingPage = () => {
             <p className="font-[16px]">
               Digital currency in which a record of transactions is maintained.
             </p>
-            <button onMouseEnter={handleHover} className="mt-12">
-              <img className="w-16" src={arrowRight} alt="" />
+            <button onMouseEnter={handleHover} onMouseLeave={handleHoverOut} className="mt-12 flex items-center bg-[#3671E9] p-2 rounded-full w-{hover? 48: 0} mx-auto justify-between font-[18px] text-white transition delay-150 duration-300 ease-in-out font-bold ">
+            {hover ? "Start mining" : ""}
+              <img className="w-16  " src={arrowRight} alt="" />
             </button>
           </div>
         </div>
