@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import {motion } from 'framer-motion'
+
+
 import arrowRight from "../images/Arrow Right.svg";
 import bitcoin from "../images/Illustration.svg";
 import ethereum from "../images/Illustrations1.svg";
@@ -138,9 +141,9 @@ const LandingPage = () => {
             </button>
           </div>
         </div>
-        <div className="text-white my-24">
+        <div className="text-white my-20 relative top-32">
           <h3 className="font-bold text-[40px]">Check how much you can earn</h3>
-          <p>
+          <p className="w-[500px] mx-auto">
             Let’s check your hash rate to see how much you will earn today,
             Exercitation veniam consequat sunt nostrud amet.
           </p>
@@ -166,10 +169,10 @@ const LandingPage = () => {
             </button>
           </div>
           <div className="mt-16">
-            <h4 className="text-[16px] text-[#3671E9]">
+            <h4 className="text-[16px] text-[#3671E9] font-bold">
               ESTIMATED 24 HOUR REVENUE:
             </h4>
-            <h3 className="text-[32px]">0.055 130 59 ETH ($1275)</h3>
+            <h3 className="text-[32px] font-bold">0.055 130 59 ETH <span className="text-[#3671E9]">($1275)</span></h3>
             <p>
               Revenue will change based on mining difficulty and Ethereum price.
             </p>
@@ -178,7 +181,7 @@ const LandingPage = () => {
       </div>
 
       <div className="bg-[#FFFFFF]">
-        <h4 className="text-center font-bold text-black pt-44 text-[30px]">
+        <h4 className="text-center font-bold text-black pt-64 text-[40px] w-[680px] mx-auto">
           Trade securely and market the high growth cryptocurrencies.
         </h4>
         <div className="flex justify-around mx-auto p-12 ">
@@ -187,7 +190,7 @@ const LandingPage = () => {
               handleHover();
               // setHover(true)
             }}
-            className="grid-rows-4 gap-y-6 h-[400px] bg-white hover:bg-[#2B076E]  delay-500 transition-all w-[30%] p-6 items-center text-center align-middle rounded-xl "
+            className="grid-rows-4 gap-y-6 h-[400px] bg-white hover:bg-[#2B076E] hover:text-white  delay- transition-all w-[30%] p-6 items-center text-center align-middle rounded-xl "
           >
             <img
               className="text-center align-middle mx-auto"
@@ -201,13 +204,13 @@ const LandingPage = () => {
               Digital currency in which a record of transactions is maintained.
             </p>
             
-              <button onMouseEnter={handleHover} onMouseLeave={handleHoverOut} className="mt-12 flex items-center bg-[#3671E9] p-2 rounded-full w-{hover? 62: 0 mx-auto justify-between font-[18px] text-white">
+              <button onMouseEnter={handleHover} onMouseLeave={handleHoverOut} className="mt-12 flex items-center bg-[#3671E9] p-2 rounded-full w-{hover? 62: 0} mx-auto justify-between font-[18px] text-white">
                 {hover ? "Start mining" : ""}
-                <img className="w-16" src={arrowRight} alt="" />
+                <img className="w-12" src={arrowRight} alt="" />
               </button>
           
           </div>
-          <div className="grid-rows-4 bg-red-500 w-[30%] p-6 items-center text-center align-middle rounded-xl ">
+          <div className="grid-rows-4  w-[30%] p-6 items-center text-center align-middle rounded-xl ">
             <img
               className="text-center align-middle mx-auto"
               src={smallethereum}
@@ -220,10 +223,10 @@ const LandingPage = () => {
               Digital currency in which a record of transactions is maintained.
             </p>
             <button className="mt-12 border-4 border-rgba(43, 7, 110, 0.20) rounded-[4rem]">
-              <img className="w-16" src={arrowRight} alt="" />
+              <img className="w-12" src={arrowRight} alt="" />
             </button>
           </div>
-          <div className="grid-rows-4 bg-red-500 w-[30%] p-6 items-center text-center align-middle rounded-xl ">
+          <div className="grid-rows-4  w-[30%] p-6 items-center text-center align-middle rounded-xl ">
             <img
               className="text-center align-middle mx-auto"
               src={litecoin}
@@ -236,8 +239,8 @@ const LandingPage = () => {
               Digital currency in which a record of transactions is maintained.
             </p>
             <button onMouseEnter={handleHover} onMouseLeave={handleHoverOut} className="mt-12 flex items-center bg-[#3671E9] p-2 rounded-full w-{hover? 48: 0} mx-auto justify-between font-[18px] text-white transition delay-150 duration-300 ease-in-out font-bold ">
-            {hover ? "Start mining" : ""}
-              <img className="w-16  " src={arrowRight} alt="" />
+            <p className="">{hover ? "Start mining" : ""}</p>
+              <img  className="w-12 ml-{hover? 4: 0}" src={arrowRight} alt="" />
             </button>
           </div>
         </div>
@@ -258,26 +261,33 @@ const LandingPage = () => {
               Learn More
             </button>
           </div>
-          <div>
+          <motion.div
+          initial={{opacity: 0}} 
+          whileInView={{opacity: 1}}
+          transition={{delay: .5}}
+          >
             <img src={chart} alt="" />
-          </div>
+          </motion.div>
         </div>
       </div>
       <div className="text-white p-12 bg-[#2B076E]">
-        <div className="flex justify-between items-center p-8">
+        <div className="flex justify-between items-center p-8 flex-row-reverse">
           <div className="w-[400px]">
-            <h2 className="text-[32px] font-bold">Invest Smart</h2>
+            <h2 className="text-[32px] font-bold">Grow your profit and track your investments</h2>
             <p className="text-[16px] py-6">
-              Get full statistic information about the behaviour of buyers and
-              sellers will help you to make the decision.{" "}
+            Use advanced analytical tools. Clear TradingView charts let you track current and historical profit investments.
             </p>
             <button className="text-white bg-[#3671E9] rounded-full w-36 text-center p-2 py-6">
               Learn More
             </button>
           </div>
-          <div>
+          <motion.div
+          initial={{opacity: 0}} 
+          whileInView={{opacity: 1}}
+          transition={{delay: .5}}
+          >
             <img src={statistic} alt="" />
-          </div>
+          </motion.div>
         </div>
       </div>
       <div className="text-white p-12 bg-[#2B076E]">
@@ -292,9 +302,13 @@ const LandingPage = () => {
               Learn More
             </button>
           </div>
-          <div>
+          <motion.div
+          initial={{opacity: 0}} 
+          whileInView={{opacity: 1}}
+          transition={{delay: .5}}
+          >
             <img src={table} alt="" />
-          </div>
+          </motion.div>
         </div>
       </div>
       <div className="bg-gradient-to-b from-[#2B076E] to-[#0D0D2B]; ">
@@ -307,14 +321,14 @@ const LandingPage = () => {
               Join now with CRAPPO to get the latest news and start mining now
             </p>
           </div>
-          <div>
+          <div className="pl-8">
             <input
-              className="border-b-2 border-solid border-white w-[500px] text-left outline-none bg-[#3671E9] placeholder:text-white"
+              className="border-b-2 border-solid border-white w-[450px] text-left outline-none bg-[#3671E9] placeholder:text-white"
               type="text"
               placeholder="Enter your email"
             />
           </div>
-          <button className="bg-white p-4 rounded-full font-bold">
+          <button className="bg-white px-4 py-[5px] mt-6 rounded-full font-bold  place-items-center ">
             Subscribe
           </button>
         </div>
