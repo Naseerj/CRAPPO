@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import {motion } from 'framer-motion'
-
+import { motion } from "framer-motion";
+// import Data from '../Data'
 
 import arrowRight from "../images/Arrow Right.svg";
 import bitcoin from "../images/Illustration.svg";
@@ -27,9 +27,10 @@ import facebook from "../images/facebook-f 1.svg";
 const bitcoinImg = {
   bgImg: `url("${bitcoin}")`,
 };
-const LandingPage = () => {
+const LandingPage = (props) => {
+  // const api = Data();
   const [hover, setHover] = useState(false);
-  const [hoverout, setHoverOut] = useState(!false)
+  const [hoverout, setHoverOut] = useState(!false);
 
   const handleHover = () => {
     if (hover === false) {
@@ -53,29 +54,27 @@ const LandingPage = () => {
 
   return (
     <div className="bg-brandBlue  bg-bitcoin xl:bg-red-700 ">
-   <div className="flex justify-between w-[90%] mx-auto "> 
-   <div className=" w-[50%] p-5 mt-24" >
-        <div className="bg-[#FFFFFF1A]  flex justify-between w-[370px] items-center rounded-full p-2 ">
-          <button className="bg-white rounded-full w-[100px] p-2 font-bold">
-            75% save
+      <div className="flex justify-between w-[90%] mx-auto ">
+        <div className=" w-[50%] p-5 mt-24">
+          <div className="bg-[#FFFFFF1A]  flex justify-between w-[370px] items-center rounded-full p-2 ">
+            <button className="bg-white rounded-full w-[100px] p-2 font-bold">
+              75% save
+            </button>
+            <p className="text-white pr-5">For the Black Friday weekend</p>
+          </div>
+          <h1 className="text-[64px] w-[37rem]  text-white text-left leading-[76px] font-bold my-7">
+            Fastest & secure platform to invest in crypto
+          </h1>
+          <p className="text-white my-8 w-[400px]">
+            Buy and sell cryptocurrencies, trusted by 10M wallets with over $30
+            billion in transactions.
+          </p>
+          <button className="text-white bg-[#3671E9] flex rounded-full w-36 justify-between p-2 text-center">
+            Try For Free <img src={arrowRight} alt="" />
           </button>
-          <p className="text-white pr-5">For the Black Friday weekend</p>
         </div>
-        <h1 className="text-[64px] w-[37rem]  text-white text-left leading-[76px] font-bold my-7">
-          Fastest & secure platform to invest in crypto
-        </h1>
-        <p className="text-white my-8 w-[400px]">
-          Buy and sell cryptocurrencies, trusted by 10M wallets with over $30
-          billion in transactions.
-        </p>
-        <button className="text-white bg-[#3671E9] flex rounded-full w-36 justify-between p-2 text-center">
-          Try For Free <img src={arrowRight} alt="" />
-        </button>
+        <div className="active mt-24"></div>
       </div>
-      <div className="active mt-24">
-
-      </div>
-   </div>
       {/* <div className=" w-80 bg-red-500 flex ">
         <div className="w-[50%] text-left p-12  pl-16 ">
           <div className="   w-10/12  pl-0 relative right-[110%] ">
@@ -121,7 +120,7 @@ const LandingPage = () => {
           <img src={earth} alt="" />
           <div className="text-left">
             <h1 className="text-[35px] font-bold ">195</h1>
-            <p>Countries Supported</p>
+            <p>Countries Supported </p>
           </div>
         </div>
       </div>
@@ -162,7 +161,9 @@ const LandingPage = () => {
               id=""
             >
               <option value="">TH/s</option>
-              <option value="">Bitcoin</option>
+              <option value="">BTC</option>
+              <option value="">ETH</option>
+              <option value="">LTC</option>
             </select>
             <button className="text-white bg-[#3671E9] rounded-full w-36 text-center p-2">
               Calculate
@@ -172,7 +173,9 @@ const LandingPage = () => {
             <h4 className="text-[16px] text-[#3671E9] font-bold">
               ESTIMATED 24 HOUR REVENUE:
             </h4>
-            <h3 className="text-[32px] font-bold">0.055 130 59 ETH <span className="text-[#3671E9]">($1275)</span></h3>
+            <h3 className="text-[32px] font-bold">
+              0.055 130 59 ETH <span className="text-[#3671E9]">($1275)</span>
+            </h3>
             <p>
               Revenue will change based on mining difficulty and Ethereum price.
             </p>
@@ -203,12 +206,15 @@ const LandingPage = () => {
             <p className="font-[16px]">
               Digital currency in which a record of transactions is maintained.
             </p>
-            
-              <button onMouseEnter={handleHover} onMouseLeave={handleHoverOut} className="mt-12 flex items-center bg-[#3671E9] p-2 rounded-full w-{hover? 62: 0} mx-auto justify-between font-[18px] text-white">
-                {hover ? "Start mining" : ""}
-                <img className="w-12" src={arrowRight} alt="" />
-              </button>
-          
+
+            <button
+              onMouseEnter={handleHover}
+              onMouseLeave={handleHoverOut}
+              className="mt-12 flex items-center bg-[#3671E9] p-2 rounded-full w-{hover? 62: 0} mx-auto justify-between font-[18px] text-white"
+            >
+              {hover ? "Start mining" : ""}
+              <img className="w-12" src={arrowRight} alt="" />
+            </button>
           </div>
           <div className="grid-rows-4  w-[30%] p-6 items-center text-center align-middle rounded-xl ">
             <img
@@ -238,9 +244,13 @@ const LandingPage = () => {
             <p className="font-[16px]">
               Digital currency in which a record of transactions is maintained.
             </p>
-            <button onMouseEnter={handleHover} onMouseLeave={handleHoverOut} className="mt-12 flex items-center bg-[#3671E9] p-2 rounded-full w-{hover? 48: 0} mx-auto justify-between font-[18px] text-white transition delay-150 duration-300 ease-in-out font-bold ">
-            <p className="">{hover ? "Start mining" : ""}</p>
-              <img  className="w-12 ml-{hover? 4: 0}" src={arrowRight} alt="" />
+            <button
+              onMouseEnter={handleHover}
+              onMouseLeave={handleHoverOut}
+              className="mt-12 flex items-center bg-[#3671E9] p-2 rounded-full w-{hover? 48: 0} mx-auto justify-between font-[18px] text-white transition delay-150 duration-300 ease-in-out font-bold "
+            >
+              <p className="">{hover ? "Start mining" : ""}</p>
+              <img className="w-12 ml-{hover? 4: 0}" src={arrowRight} alt="" />
             </button>
           </div>
         </div>
@@ -262,9 +272,9 @@ const LandingPage = () => {
             </button>
           </div>
           <motion.div
-          initial={{opacity: 0}} 
-          whileInView={{opacity: 1}}
-          transition={{delay: .5}}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
           >
             <img src={chart} alt="" />
           </motion.div>
@@ -273,18 +283,21 @@ const LandingPage = () => {
       <div className="text-white p-12 bg-[#2B076E]">
         <div className="flex justify-between items-center p-8 flex-row-reverse">
           <div className="w-[400px]">
-            <h2 className="text-[32px] font-bold">Grow your profit and track your investments</h2>
+            <h2 className="text-[32px] font-bold">
+              Grow your profit and track your investments
+            </h2>
             <p className="text-[16px] py-6">
-            Use advanced analytical tools. Clear TradingView charts let you track current and historical profit investments.
+              Use advanced analytical tools. Clear TradingView charts let you
+              track current and historical profit investments.
             </p>
             <button className="text-white bg-[#3671E9] rounded-full w-36 text-center p-2 py-6">
               Learn More
             </button>
           </div>
           <motion.div
-          initial={{opacity: 0}} 
-          whileInView={{opacity: 1}}
-          transition={{delay: .5}}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
           >
             <img src={statistic} alt="" />
           </motion.div>
@@ -303,14 +316,15 @@ const LandingPage = () => {
             </button>
           </div>
           <motion.div
-          initial={{opacity: 0}} 
-          whileInView={{opacity: 1}}
-          transition={{delay: .5}}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
           >
             <img src={table} alt="" />
           </motion.div>
         </div>
       </div>
+
       <div className="bg-gradient-to-b from-[#2B076E] to-[#0D0D2B]; ">
         <div className="bg-[#3671E9] flex justify-between w-[70%] mx-auto p-6 rounded-xl items-center">
           <div>
@@ -330,9 +344,22 @@ const LandingPage = () => {
           </div>
           <button className="bg-white px-4 py-[5px] mt-6 rounded-full font-bold  place-items-center ">
             Subscribe
+            {/* {api} */}
           </button>
         </div>
       </div>
+      {/* {props.id.map((coins)=>{
+        return(
+          <div>
+            <h1>{coins}</h1>
+          </div>
+        )
+      })} */}
+      {props.coins.map((coins) => {
+        return <div key={coins.id}>
+          <h1>{coins.id}</h1>
+        </div>;
+      })}
       <footer className="bg-[#0D0D2B]">
         <div className="bg-[#0D0D2B] text-white flex justify-between p-8 h-[300px]">
           <img className="w-44  self-start" src={logo} alt="" />
