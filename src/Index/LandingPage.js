@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 // import Data from '../Data'
 
+// import coin from '../App'
+
 import arrowRight from "../images/Arrow Right.svg";
 import bitcoin from "../images/Illustration.svg";
 import ethereum from "../images/Illustrations1.svg";
@@ -27,7 +29,7 @@ import facebook from "../images/facebook-f 1.svg";
 const bitcoinImg = {
   bgImg: `url("${bitcoin}")`,
 };
-const LandingPage = (props) => {
+const LandingPage = ({props}) => {
   // const api = Data();
   const [hover, setHover] = useState(false);
   const [hoverout, setHoverOut] = useState(!false);
@@ -53,7 +55,7 @@ const LandingPage = (props) => {
   };
 
   return (
-    <div className="bg-brandBlue  bg-bitcoin xl:bg-red-700 ">
+    <div className="bg-brandBlue  bg-bitcoin ">
       <div className="flex justify-between w-[90%] mx-auto ">
         <div className=" w-[50%] p-5 mt-24">
           <div className="bg-[#FFFFFF1A]  flex justify-between w-[370px] items-center rounded-full p-2 ">
@@ -124,9 +126,9 @@ const LandingPage = (props) => {
           </div>
         </div>
       </div>
-      <div className="bg-brandBlue h-[1000px]">
-        <div className="flex justify-between text-white items-center w-[80%] mx-auto">
-          <img src={ethereum} alt="" />
+      <div className="bg-brandBlue h-[1000px]  xm:mt-20">
+        <div className="flex justify-between text-white items-center w-[80%] mx-auto xm:w-[85%]">
+          <img className="xm:w-[550px]" src={ethereum} alt="" />
           <div className="text-left w-[41%]">
             <h2 className="font-bold text-[40px]">
               Why you should choose CRAPPO
@@ -151,12 +153,12 @@ const LandingPage = (props) => {
         <div className="bg-white w-[60%] h-[28%]  mx-auto p-8 text-left grid-rows-2  rounded-lg relative top-[130px] drop-shadow-md ">
           <div className="flex justify-between mb-8">
             <input
-              className="border-b-2 border-solid border-black w-[500px] text-left outline-none"
+              className="border-b-2 border-solid border-black w-[500px] text-left outline-none xm:w-[320px]"
               type="text"
               placeholder="Enter your hash rate"
             />
             <select
-              className="border-b-2 border-black outline-none "
+              className="border-b-2 border-black outline-none xm:w-28 "
               name=""
               id=""
             >
@@ -169,7 +171,15 @@ const LandingPage = (props) => {
               Calculate
             </button>
           </div>
-          <div className="mt-16">
+          <div className="mt-16 bg-green-500">
+            {/* {props.coins.map(coin => {
+              return (
+                <div>
+                  <h1>Hello</h1>
+                </div>
+              );
+            })} */}
+
             <h4 className="text-[16px] text-[#3671E9] font-bold">
               ESTIMATED 24 HOUR REVENUE:
             </h4>
@@ -193,7 +203,7 @@ const LandingPage = (props) => {
               handleHover();
               // setHover(true)
             }}
-            className="grid-rows-4 gap-y-6 h-[400px] bg-white hover:bg-[#2B076E] hover:text-white  delay- transition-all w-[30%] p-6 items-center text-center align-middle rounded-xl "
+            className="grid-rows-4 gap-y-6 h-[400px] bg-white hover:bg-[#2B076E] hover:text-white  delay- transition-all w-[30%] p-6 items-center text-center align-middle rounded-xl xl:bg-red-300 "
           >
             <img
               className="text-center align-middle mx-auto"
@@ -216,7 +226,7 @@ const LandingPage = (props) => {
               <img className="w-12" src={arrowRight} alt="" />
             </button>
           </div>
-          <div className="grid-rows-4  w-[30%] p-6 items-center text-center align-middle rounded-xl ">
+          <div className="grid-rows-4  w-[30%] p-6 items-center text-center align-middle rounded-xl xl:bg-red-300 ">
             <img
               className="text-center align-middle mx-auto"
               src={smallethereum}
@@ -232,7 +242,7 @@ const LandingPage = (props) => {
               <img className="w-12" src={arrowRight} alt="" />
             </button>
           </div>
-          <div className="grid-rows-4  w-[30%] p-6 items-center text-center align-middle rounded-xl ">
+          <div className="grid-rows-4  w-[30%] p-6 items-center text-center align-middle rounded-xl xl:bg-red-300 ">
             <img
               className="text-center align-middle mx-auto"
               src={litecoin}
@@ -299,7 +309,7 @@ const LandingPage = (props) => {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            <img src={statistic} alt="" />
+            <img className="w-[550px]" src={statistic} alt="" />
           </motion.div>
         </div>
       </div>
@@ -320,24 +330,24 @@ const LandingPage = (props) => {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            <img src={table} alt="" />
+            <img   className=""  src={table} alt="" />
           </motion.div>
         </div>
       </div>
 
-      <div className="bg-gradient-to-b from-[#2B076E] to-[#0D0D2B]; ">
+      <div className="bg-gradient-to-b from-[#2B076E] to-[#0D0D2B]">
         <div className="bg-[#3671E9] flex justify-between w-[70%] mx-auto p-6 rounded-xl items-center">
           <div>
-            <h1 className="font-bold text-[32px] text-white mb-2 mt-6">
+            <h1 className="font-bold text-[32px] text-white mb-2 mt-6 xl:text-[28px]">
               Start mining now
             </h1>
             <p className="text-white text-[16px] w-[250px] my-4">
               Join now with CRAPPO to get the latest news and start mining now
             </p>
           </div>
-          <div className="pl-8">
-            <input
-              className="border-b-2 border-solid border-white w-[450px] text-left outline-none bg-[#3671E9] placeholder:text-white"
+          <div className="pl-8 xl:pl-6">
+            <input 
+              className="border-b-2 border-solid border-white w-[450px] text-left outline-none bg-[#3671E9] placeholder:text-white xl:w-[400px]"
               type="text"
               placeholder="Enter your email"
             />
@@ -348,18 +358,22 @@ const LandingPage = (props) => {
           </button>
         </div>
       </div>
-      {/* {props.id.map((coins)=>{
+      {/* {props && props.map((coins)=>{
+        const {id} = coins
         return(
           <div>
-            <h1>{coins}</h1>
+            <h1>{id}</h1>
+            <h2>{}</h2>
           </div>
         )
       })} */}
-      {props.coins.map((coins) => {
-        return <div key={coins.id}>
-          <h1>{coins.id}</h1>
-        </div>;
-      })}
+      {/* {props && props.coins.map((coins) => {
+        return (
+          <div key={coins.id}>
+            <h1>{coins.id}</h1>
+          </div>
+        );
+      })} */}
       <footer className="bg-[#0D0D2B]">
         <div className="bg-[#0D0D2B] text-white flex justify-between p-8 h-[300px]">
           <img className="w-44  self-start" src={logo} alt="" />
