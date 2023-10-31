@@ -64,10 +64,10 @@ const LandingPage = ({props}) => {
             </button>
             <p className="text-white pr-5">For the Black Friday weekend</p>
           </div>
-          <h1 className="text-[64px] w-[37rem]  text-white text-left leading-[76px] font-bold my-7">
+          <h1 className="text-[64px] w-[37rem]  text-white text-left leading-[76px] font-bold my-7 lg:text-[56px] lg:w-[33rem]">
             Fastest & secure platform to invest in crypto
           </h1>
-          <p className="text-white my-8 w-[400px]">
+          <p className="text-white my-8 w-[400px] lg:text-left">
             Buy and sell cryptocurrencies, trusted by 10M wallets with over $30
             billion in transactions.
           </p>
@@ -128,9 +128,9 @@ const LandingPage = ({props}) => {
       </div>
       <div className="bg-brandBlue h-[1000px]  xm:mt-20">
         <div className="flex justify-between text-white items-center w-[80%] mx-auto xm:w-[85%]">
-          <img className="xm:w-[550px]" src={ethereum} alt="" />
-          <div className="text-left w-[41%]">
-            <h2 className="font-bold text-[40px]">
+          <img className="xm:w-[550px] lg:w-[450px]" src={ethereum} alt="" />
+          <div className="text-left w-[41%] lg:w-[45%]">
+            <h2 className="font-bold text-[40px] lg:text-[32px] lg:leading-[40px]">
               Why you should choose CRAPPO
             </h2>
             <p className="my-2 w-[390px]">
@@ -150,15 +150,15 @@ const LandingPage = ({props}) => {
           </p>
         </div>
 
-        <div className="bg-white w-[60%] h-[28%]  mx-auto p-8 text-left grid-rows-2  rounded-lg relative top-[130px] drop-shadow-md ">
+        <div className="bg-white w-[60%] h-[28%]  mx-auto p-8 text-left grid-rows-2  rounded-lg relative top-[130px] drop-shadow-md lg:top-[200px] ">
           <div className="flex justify-between mb-8">
             <input
-              className="border-b-2 border-solid border-black w-[500px] text-left outline-none xm:w-[320px]"
+              className="border-b-2 border-solid border-black w-[500px] text-left outline-none xm:w-[320px] lg:w-[280px]"
               type="text"
               placeholder="Enter your hash rate"
             />
             <select
-              className="border-b-2 border-black outline-none xm:w-28 "
+              className="border-b-2 border-black outline-none xm:w-28 lg:w-16 "
               name=""
               id=""
             >
@@ -270,14 +270,14 @@ const LandingPage = ({props}) => {
           Market sentiments, portfolio, and run the infrastructure of your
           choice
         </h2>
-        <div className="flex justify-between items-center p-8">
+        <div className="flex justify-between items-center p-8 xm:mt-12 ">
           <div className="w-[400px]">
             <h2 className="text-[32px] font-bold">Invest Smart</h2>
             <p className="text-[16px] py-6">
               Get full statistic information about the behaviour of buyers and
               sellers will help you to make the decision.{" "}
             </p>
-            <button className="text-white bg-[#3671E9] rounded-full w-36 text-center p-2 py-6">
+            <button className="text-white bg-[#3671E9] rounded-full w-36 text-center  py-[10px]">
               Learn More
             </button>
           </div>
@@ -286,7 +286,7 @@ const LandingPage = ({props}) => {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            <img src={chart} alt="" />
+            <img className="xs:w-[450px]" src={chart} alt="" />
           </motion.div>
         </div>
       </div>
@@ -300,7 +300,7 @@ const LandingPage = ({props}) => {
               Use advanced analytical tools. Clear TradingView charts let you
               track current and historical profit investments.
             </p>
-            <button className="text-white bg-[#3671E9] rounded-full w-36 text-center p-2 py-6">
+            <button className="text-white bg-[#3671E9] rounded-full w-36 text-center  py-[10px]">
               Learn More
             </button>
           </div>
@@ -309,7 +309,7 @@ const LandingPage = ({props}) => {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            <img className="w-[550px]" src={statistic} alt="" />
+            <img className="w-[550px] xs:w-[450px]" src={statistic} alt="" />
           </motion.div>
         </div>
       </div>
@@ -321,7 +321,7 @@ const LandingPage = ({props}) => {
               Get full statistic information about the behaviour of buyers and
               sellers will help you to make the decision.{" "}
             </p>
-            <button className="text-white bg-[#3671E9] rounded-full w-36 text-center p-2 py-6">
+            <button className="text-white bg-[#3671E9] rounded-full w-36 text-center  py-[10px]">
               Learn More
             </button>
           </div>
@@ -330,24 +330,24 @@ const LandingPage = ({props}) => {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            <img   className=""  src={table} alt="" />
+            <img   className="xs:w-[570px] "  src={table} alt="" />
           </motion.div>
         </div>
       </div>
 
       <div className="bg-gradient-to-b from-[#2B076E] to-[#0D0D2B]">
         <div className="bg-[#3671E9] flex justify-between w-[70%] mx-auto p-6 rounded-xl items-center">
-          <div>
-            <h1 className="font-bold text-[32px] text-white mb-2 mt-6 xl:text-[28px]">
+          <div className="">
+            <h1 className="font-bold text-[32px] text-white mb-2 mt-6 xl:text-[28px] xs:text-[26px]">
               Start mining now
             </h1>
-            <p className="text-white text-[16px] w-[250px] my-4">
+            <p className="text-white text-[16px] w-[250px] my-4 xs:w-[200px]">
               Join now with CRAPPO to get the latest news and start mining now
             </p>
           </div>
           <div className="pl-8 xl:pl-6">
             <input 
-              className="border-b-2 border-solid border-white w-[450px] text-left outline-none bg-[#3671E9] placeholder:text-white xl:w-[400px]"
+              className="border-b-2 border-solid border-white w-[450px] text-left outline-none bg-[#3671E9] placeholder:text-white xl:w-[400px] xm:w-[350px] xs:w-[300px]"
               type="text"
               placeholder="Enter your email"
             />
